@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:context="http://www.springframework.org/schema/context"
+             xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <annotation-driven />
+    <context:component-scan base-package="com.devmind.mvc" />
+
+    <beans:bean
+            class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/WEB-INF/views/" />
+        <beans:property name="suffix" value=".jsp" />
+    </beans:bean>
+    <beans:bean
+            id="page"
+            class="com.devmind.mvc.model.Page">
+        <beans:property name="description" value="my description" />
+        <beans:property name="contact" ref="contact" />
+    </beans:bean>
+    <beans:bean
+            id="contact"
+            class="com.devmind.mvc.model.Contact">
+        <beans:property name="owner" value="ME" />
+        <beans:property name="address" value="DEVMIND" />
+    </beans:bean>
+</beans:beans>

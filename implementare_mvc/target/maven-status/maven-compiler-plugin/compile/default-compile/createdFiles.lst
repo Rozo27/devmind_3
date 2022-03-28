@@ -1,0 +1,5 @@
+com\devmind\mvc\model\Contact.class
+com\devmind\mvc\controller\MVCController.class
+com\devmind\mvc\model\User.class
+com\devmind\mvc\service\MVCService.class
+com\devmind\mvc\model\Page.class

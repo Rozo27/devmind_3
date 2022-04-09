@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.Locale;
 
 @Controller
-@RequestMapping("/mvc")
 public class MVCController {
 
     @Autowired
@@ -45,11 +44,8 @@ public class MVCController {
     public String user(Model model) {
         System.out.println("We are at route: about");
         model.addAttribute("description", page.getDescription());
-        System.out.println(model);
         model.addAttribute("owner", page.getContact().getOwner());
-        System.out.println(model);
         model.addAttribute("address", page.getContact().getAddress());
-        System.out.println(model);
         return "about";
     }
 }

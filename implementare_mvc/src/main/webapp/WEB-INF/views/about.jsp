@@ -14,5 +14,9 @@
 <p>Descrierea este: ${description}.</p><br>
 <p>Proprietarul este: ${owner}.</p>
 <p>Adresa este: ${address}.</p>
+<p>${pageContext.request.contextPath}</p>
+<img src="${pageContext.request.contextPath}/images/about-text.png">
+<img src="/images/about-text.png">
+<p>Ana are mere</p>
 </body>
 </html>

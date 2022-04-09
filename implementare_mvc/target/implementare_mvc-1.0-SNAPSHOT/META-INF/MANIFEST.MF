@@ -1,2 +1,5 @@
 Manifest-Version: 1.0
-Class-Path:
+Created-By: IntelliJ IDEA
+Built-By: Rozoleanu Andreea
+Build-Jdk: Oracle OpenJDK version 13.0.1
+

@@ -1,0 +1,54 @@
+[
+  {
+    "random": 96,
+    "random double": 31.119,
+    "email from expression": "Drucie.O'Neill@yopmail.com",
+    "array": [
+      "Sarette",
+      "Xylina",
+      "Harrietta",
+      "Dennie",
+      "Drucie"
+    ],
+    "array of objects": [
+      {
+        "index": 0,
+        "end": 5
+      },
+      {
+        "index": 1,
+        "end": 6
+      },
+      {
+        "index": 2,
+        "end": 7
+      }
+    ]
+  },
+  {
+    "random": 57,
+    "random double": 65.815,
+    "email from expression": "Sadie.Ephrem@yopmail.com",
+    "array": [
+      "Leona",
+      "Camile",
+      "Etta",
+      "Anestassia",
+      "Jenilee"
+    ],
+    "array of objects": [
+      {
+        "index": 0,
+        "end": 5
+      },
+      {
+        "index": 1,
+        "end": 6
+      },
+      {
+        "index": 2,
+        "end": 7
+      }
+    ]
+  }
+]

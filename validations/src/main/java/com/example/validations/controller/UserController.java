@@ -1,6 +1,6 @@
 package com.example.validations.controller;
 
-import com.example.validations.exceptions.CustomRequestException;
+import com.example.validations.exceptions.CustomValidationException;
 import com.example.validations.model.LoginRequest;
 import com.example.validations.model.LoginResponse;
 import com.example.validations.model.User;
@@ -26,7 +26,7 @@ public class UserController {
     public User handleRegister(@Valid @RequestBody User user) {
         users.stream().forEach(u->{
             if(u.getEmail().equals(user.getEmail()))
-                throw new CustomRequestException("email", "There is already one user with this mail");
+                throw new CustomValidationException("email", "There is already one user with this mail");
         });
         users.add(user);
         users.stream().forEach(u-> System.out.println(u));
@@ -38,7 +38,7 @@ public class UserController {
     public ResponseEntity<LoginResponse> handleLogin(@Valid @RequestBody LoginRequest loginRequest) {
         Optional<User> user = users.stream().filter(u -> u.getEmail().equals(loginRequest.getEmail())).findFirst();
         if(user.isEmpty())
-            throw new CustomRequestException("email+password","This user does not exist");
+            throw new CustomValidationException("email+password","This user does not exist");
 
         User u = user.get();
         LoginResponse loginResponse = new LoginResponse(u.getFirstName(), u.getLastName(),u.getEmail());
@@ -53,8 +53,8 @@ public class UserController {
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(CustomRequestException.class)
-    public Map<String, String> handleValidationExceptions(CustomRequestException ex) {
+    @ExceptionHandler(CustomValidationException.class)
+    public Map<String, String> handleValidationExceptions(CustomValidationException ex) {
         Map<String, String> errors = new HashMap<>();
         errors.put("field", ex.getField());
         errors.put("error_message", ex.getMessage());

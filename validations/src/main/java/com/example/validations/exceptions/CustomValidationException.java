@@ -5,9 +5,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CustomRequestException extends RuntimeException{
+public class CustomValidationException extends RuntimeException{
     private String field;
-    public CustomRequestException(String field, String errorMessage) {
+    public CustomValidationException(String field, String errorMessage) {
         super(errorMessage);
         this.field = field;
     }

@@ -4,6 +4,7 @@
          id="WebApp_ID" version="3.0">
     <display-name>My first Spring MVC app</display-name>
 
+
     <servlet>
         <servlet-name>firstServlet</servlet-name>
         <servlet-class>

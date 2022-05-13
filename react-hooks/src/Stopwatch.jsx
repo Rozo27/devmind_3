@@ -9,9 +9,9 @@ export const Stopwatch = () => {
             let interval;
             if(runningState) {
                interval = setInterval( () => {
-                   setTimer((timer) => timer + 10);
+                   setTimer((timer) => timer + 1000);
                    console.log(timer);
-               }, 10);
+               }, 1000);
             } else clearInterval(interval);
             return () => clearInterval(interval);
       }, [runningState]
@@ -20,6 +20,7 @@ export const Stopwatch = () => {
   return (
       <div>
           <p>
+
         {("0" + Math.floor((timer / 60000) % 60)).slice(-2)}:{("0" + Math.floor((timer / 1000) % 60)).slice(-2)}
       </p>
           <br/>

@@ -2,3 +2,5 @@
 /libs
 *.iml
 .idea
+node_modules
+/node_modules/.staging/
